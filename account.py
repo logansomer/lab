@@ -1,10 +1,20 @@
-def __init__(self,name):
-    pass
-def deposit(self,account):
-    pass
-def withdraw(self,account):
-    pass
-def get_balance(self):
-    pass
-def get_name(self):
-    pass
+class Account:
+    def __init__(self,name):
+        __account_balance = 0
+        __account_name = name
+    def deposit(self,amount):
+        if amount <= 0:
+            return False
+        else:
+            self.__account_balance += amount
+            return True
+    def withdraw(self,amount):
+        if amount <= 0 or amount > self.__account_balance:
+            return False
+        else:
+            self.__account_balance -= amount
+            return True
+    def get_balance(self):
+        return self.__account_balance
+    def get_name(self):
+        return self.__account_name
